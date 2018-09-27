@@ -1,0 +1,19 @@
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col-dropshadow,
+.col-dropshadow-1{
+    box-shadow: 0 0 3px -1px #999;
+} 
+.col-dropshadow-2{
+    box-shadow: 0 0 5px -1px #999;
+} 
+.col-dropshadow-3{
+    box-shadow: 0 0 7px -1px #999;
+} 
+.col-dropshadow-4{
+    box-shadow: 0 0 10px -1px #999;
+} 

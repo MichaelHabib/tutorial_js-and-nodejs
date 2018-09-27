@@ -1,0 +1,20 @@
+= Learning JS & NodeJS
+This repo is an experement to learn more about NodeJS, related libraries & automation tools.
+
+
+
+
+== Prac 1 notes
+
+== Prac 2 notes
+
+.Tasks:
+- [x] Setting up a NodeJS server 
+- [x] Setup server reloader using `nodemon` 
+- [ ] Setup browser auto reloader using `browser-refresh`.
+- [ ] Setup file reloader using the `watch` module.
+
+.Notes:
+- To use browser-refresh (recommended), execute `./../node_modules/browser-refresh/bin/browser-refresh app.js `
+- To start the server using nodemon (not recommended, use browser-refresh instead) , execute `./../node_modules/nodemon/bin/nodemon.js app.js`
+- 

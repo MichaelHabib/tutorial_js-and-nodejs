@@ -1,0 +1,42 @@
+/* line 1, source/scss/general.scss */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+/* line 7, source/scss/general.scss */
+.col-dropshadow,
+.col-dropshadow-1 {
+  box-shadow: 0 0 3px -1px #999; }
+
+/* line 11, source/scss/general.scss */
+.col-dropshadow-2 {
+  box-shadow: 0 0 5px -1px #999; }
+
+/* line 14, source/scss/general.scss */
+.col-dropshadow-3 {
+  box-shadow: 0 0 7px -1px #999; }
+
+/* line 17, source/scss/general.scss */
+.col-dropshadow-4 {
+  box-shadow: 0 0 10px -1px #999; }
+
+/**
+* ********************************************
+* Magnific Popup 
+* ********************************************
+**/
+/* line 7, source/scss/magnific-popup.scss */
+.mfp-wrap {
+  /*To show the popup over divi theme navigation!*/
+  z-index: 100001 !important; }
+
+/* line 11, source/scss/magnific-popup.scss */
+.popup-inline-content {
+  /*display: none;*/
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 800px;
+  margin: 20px auto; }

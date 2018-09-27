@@ -1,0 +1,60 @@
+# Project Ignore Rules
+**/node_modules_local
+
+# IDE & Dev Tools File to ignore
+**/nbproject/private/
+**/*.sublime-*
+**/.project
+**/Vagrantfile
+**/.vagrant*
+
+# PHP files and folders
+**/vendor
+
+# Common developer tools
+**/composer.phar
+**/php-cs-fixer.phar
+**/scrutinizer.phar
+
+# Node & Front-end Dev
+**/.sass-cache
+**/bower_components
+**/node_modules
+**/npm-debug.log
+
+# File-system cruft and temporary files
+**/.*.swp
+**/.buildpath
+**/.idea
+**/.swp
+**/__*
+
+
+# OS generated files #
+######################
+**/.DS_Store
+**/.DS_Store?
+**/._*
+**/.Spotlight-V100
+**/.Trashes
+**/ehthumbs.db
+**/Thumbs.db
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+**/*.7z
+**/*.dmg
+**/*.gz
+**/*.iso
+**/*.jar
+**/*.rar
+**/*.tar
+**/*.zip
+
+
+
+# Credit & Sources
+## https://gist.github.com/octocat/9257657
+## https://stackoverflow.com/questions/18393498/gitignore-all-the-ds-store-files-in-every-folder-and-subfolder

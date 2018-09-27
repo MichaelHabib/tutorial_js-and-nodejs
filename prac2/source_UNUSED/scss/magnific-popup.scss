@@ -1,0 +1,19 @@
+
+/**
+* ********************************************
+* Magnific Popup 
+* ********************************************
+**/
+.mfp-wrap{
+    /*To show the popup over divi theme navigation!*/
+    z-index: 100001 !important;
+}
+.popup-inline-content{
+    /*display: none;*/
+    position: relative;
+    background: #FFF;
+    padding: 20px;
+    width: auto;
+    max-width: 800px;
+    margin: 20px auto;
+}
