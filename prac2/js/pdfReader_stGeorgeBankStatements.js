@@ -51,16 +51,23 @@ const procesPDF = (filePath, outputFolder) => {
       // console.log(pdfJson);
       return fileData.pdfJson = pdfJson;;
     })
-    .then((pdfJson) => {
-      // Write full pdf JSON data to file
-      let pdfJsonFile = pdf_reader.writeJSONFile(
-        pdfJson,
-        func_outputFilePath(outputFolder, fileName + '-full', fileExtension)
-      );
-      return pdfJson;
-    })
-    .then((pdfJson) => {
+    // .then(() => {
+    //   // Write full pdf JSON data to file
+    //   let pdfJson = fileData.pdfJson;
+    //   let pdfJsonFile = pdf_reader.writeJSONFile(
+    //     pdfJson,
+    //     func_outputFilePath(outputFolder, fileName + '-full', fileExtension)
+    //   );
+    //   return pdfJsonFile;
+    // })
+    // .then((pdfJsonFile) => {
+    //   // Map pdfTextsJsonFile to fileData object
+    //   return fileData.pdfJsonFile = pdfJsonFile;
+    // })
+
+    .then(() => {
       //Extract only text from pdf JSON by returning objects  with 't' property.
+      let pdfJson = fileData.pdfJson;
       let pdfTextsJson = pdf_reader.pdfTextFromJson(pdfJson);
       return pdfTextsJson;
     })
@@ -69,19 +76,20 @@ const procesPDF = (filePath, outputFolder) => {
       // console.log(pdfTextsJson);
       return fileData.pdfTextsJson = pdfTextsJson;
     })
-    .then((pdfTextsJson) => {
-      // Write pdfTextsJson to file
-      // console.log(pdfTextsJson);
-      let pdfTextsJsonFile = pdf_reader.writeJSONFile(
-        pdfTextsJson,
-        func_outputFilePath(outputFolder, fileName + '-items', fileExtension)
-      );
-      return pdfTextsJsonFile;
-    })
-    .then((pdfTextsJsonFile) => {
-      // Map pdfTextsJsonFile to fileData object
-      return fileData.pdfTextsJsonFile = pdfTextsJsonFile;
-    })
+    // .then((pdfTextsJson) => {
+    //   // Write pdfTextsJson to file
+    //   // console.log(pdfTextsJson);
+    //   let pdfTextsJsonFile = pdf_reader.writeJSONFile(
+    //     pdfTextsJson,
+    //     func_outputFilePath(outputFolder, fileName + '-items', fileExtension)
+    //   );
+    //   return pdfTextsJsonFile;
+    // })
+    // .then((pdfTextsJsonFile) => {
+    //   // Map pdfTextsJsonFile to fileData object
+    //   return fileData.pdfTextsJsonFile = pdfTextsJsonFile;
+    // })
+
     .then(() => {
       // Group pdfTextsJson by row
       // console.log(pdfTextsJsonFile);
@@ -90,7 +98,7 @@ const procesPDF = (filePath, outputFolder) => {
     })
     .then((pdfTextFromJson_Grouped) => {
       //COnverting pdfTextFromJson_Grouped to txt format then saving to file
-      var pdfTextCSV = [];
+      var pdfTextString = [];
       for (rowKey of Object.keys(pdfTextFromJson_Grouped)) {
         let rowObj = pdfTextFromJson_Grouped[rowKey];
         // console.log(rowObj);
@@ -99,23 +107,15 @@ const procesPDF = (filePath, outputFolder) => {
           rowCells.push(cellObj.t);
           // console.log(cellObj.t);
         }
-        pdfTextCSV.push(rowCells.join(' '));
+        pdfTextString.push(rowCells.join(' '));
       }
-      pdfTextCSV = pdfTextCSV.join('\n')
-      console.log(pdfTextCSV);
+      pdfTextString = pdfTextString.join('\n')
+      // console.log(pdfTextString);
       pdf_reader.writeFile(
-        pdfTextCSV,
+        pdfTextString,
         func_outputFilePath(outputFolder, fileName + '-', 'txt'));
-      // return pdfTextsJson;
 
       return pdfTextFromJson_Grouped;
-    })
-    .then((pdfTextFromJson_Grouped) => {
-
-
-      return pdfTextFromJson_Grouped;
-
-
     })
     .catch(err => {
       //                console.log(err);
@@ -128,12 +128,12 @@ readpdfs = (pdfsSource, outputFolder) => {
   if (!outputFolder) {
     outputFolder = pdfsSource + "output/";
   }
-  console.log(outputFolder);
+  // console.log(outputFolder);
   return fs.fromDir(pdfsSource, ".pdf")
     .then((fileList) => {
       var promises = [];
-      // console.log(`fileList =`);
-      // console.log(fileList);
+      console.log(`= fileList =`);
+      console.log(fileList);
 
       for (var pdfSource of fileList) {
         promises.push(procesPDF(pdfSource, outputFolder));

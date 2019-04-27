@@ -1,0 +1,72 @@
+{
+  "name": "learning_js-and-nodejs",
+  "version": "1.0.0",
+  "author": "Michael Habib <contact@michaelhabib.name>",
+  "homepage": "https://michaelhabib.name",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "licenses": [
+    {
+      "type": "",
+      "url": ""
+    }
+  ],
+  "scripts": {
+    "build": "webpack --progress --config ./build/webpack.config.js",
+    "dashboard": "webpack-dashboard -- webpack --progress --config ./build/webpack.config.js",
+    "nodemon": "nodemon",
+    "justdoit": "nodemon"
+  },
+  "nodemonConfig": {
+    "watch": "./build",
+    "exec": "webpack --progress --config ./build/webpack.config.js"
+  },
+  "dependencies": {
+    "asciidoctor.js": "^1.5.7-rc.1",
+    "babel-loader": "^8.0.4",
+    "express": "^4.16.3",
+    "fs-extra": "^7.0.0"
+  },
+  "devDependencies": {
+    "bootstrap": "^v4.0.0",
+    "browser-refresh": "^1.7.3",
+    "clean-webpack-plugin": "^0.1.19",
+    "common-config-webpack-plugin": "^0.4.3",
+    "css-loader": "^1.0.0",
+    "debug": "^4.0.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^2.0.0",
+    "foundation-sites": "^6.5.0-rc.4",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.11",
+    "mini-css-extract-plugin": "^0.4.2",
+    "motion-ui": "^2.0.3",
+    "node-sass": "^4.9.3",
+    "nodemon": "^1.18.4",
+    "nodemon-webpack-plugin": "^4.0.3",
+    "pdf-parse": "^1.0.8",
+    "pdf2json": "^1.1.7",
+    "pdfreader": "^0.2.5",
+    "pino": "^5.6.2",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "sendevent": "^1.0.5",
+    "style-loader": "^0.23.0",
+    "swiper": "^4.4.1",
+    "url-loader": "^1.1.2",
+    "watch": "^1.0.2",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dashboard": "^2.0.0",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-livereload-plugin": "^2.1.1"
+  }
+}

@@ -1,5 +1,3 @@
-//require(`../scss/custom.scss`);
-
 var $ = jQuery.noConflict();
 $(document).ready(function() {
 
