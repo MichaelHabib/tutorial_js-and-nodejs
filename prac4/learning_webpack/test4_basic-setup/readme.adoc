@@ -1,0 +1,18 @@
+= prac4/learning_webpack/test4_basic-setup
+== Usage
+
+----
+# npm run ScriptNameAsShownInPackage.json
+npm run build
+npm run build:v1
+
+----
+== Goals and ToDo
+- Stage 1 - Stable NPM setup with webpack SCSS, CSS and JS compiling
+
+
+- Stage 2 - use yarn & use live reload server
+
+
+- Extra Features
+** [ ] Use .env config files & move project state "dev vs pro" to .env files + runtime var checks.
