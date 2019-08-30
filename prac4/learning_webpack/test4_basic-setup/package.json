@@ -1,19 +1,31 @@
 {
   "scripts": {
-    "build:v2": "webpack  --progress --config source/config/webpack.config.v2.js",
+    "nodemon": "nodemon -w source/config/ --exec npm run build:v3",
+    "build:v3": "webpack  --progress --watch --config source/config/webpack.config.v3.js",
+    "build:v2": "webpack  --progress --watch --config source/config/webpack.config.v2.js",
     "build:v1": "webpack  --progress --config source/config/webpack.config.v1.js",
-    "build": "webpack  --progress --config source/config/webpack.config.js"
+    "build": "webpack  --progress --config --mode production source/config/webpack.config.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "html-webpack-tags-plugin": "^2.0.15",
+    "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
+    "nodemon": "^1.19.1",
     "sass-loader": "^7.3.1",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7"
+    "webpack-cli": "^3.3.7",
+    "webpack-livereload-plugin": "^2.2.0",
+    "browserify": "^16.5.0"
   },
   "dependencies": {
     "lodash": "^4.17.15"

@@ -7,12 +7,60 @@ npm run build
 npm run build:v1
 
 ----
+
+== Artifacts
+- Webpack by default is designed for handling JS.
+-
+
 == Goals and ToDo
-- Stage 1 - Stable NPM setup with webpack SCSS, CSS and JS compiling
+
+=== V1
+1. [x] Compile SCSS, CSS and JS into a single file.
+
+=== V2
+1. Stable NPM setup with webpack SCSS, CSS and JS compiling
+** [x] Separate CSS from ouput JS, create one css file per entry point in the *same folder*.
+** [x] Load separated CSS files .
+
+1. [x] Auto clean dist folder with `CleanWebpackPlugin`
+
+1. [x] Use nodeman for server restart
+a. add the following to _package.json > scripts_ : `"nodemon": "nodemon -w source/config/ --exec npm run build:v2" `
+a. Run the above script using `npm run nodemon` to auto watch config folder and restart webpack .
 
 
-- Stage 2 - use yarn & use live reload server
+1. [x] Output HTML File using _HtmlWebpackPlugin_
 
+=== V3
+1. [x] Save CSS & JS files into corresponding folders. Done by setting the default output folder to /js/ then overriding other file types output folder.
+** [x] Load separated files into the output html file. Done by default with _HtmlWebpackPlugin_!.
+
+1. Add url-loader for CSS assets
+** https://github.com/webpack-contrib/url-loader
+
+1. Output custom HTML code that contain tags only for easy inclusion in custom projects.
+
+
+1. [ ] Use `LiveReloadPlugins` for live refresh
+** used `HtmlWebpackTagsPlugin` to append js script.
+
+
+
+
+==== V4
+1. Support NodeJS modules & workflow.
+1. Support post-css plugin
+1. [ ] Support Babel
+** [ ] Install babel
+** [x] configure babel preset in `.babelrc`
+** [ ] Test babel
+
+1. Support Browserify
 
 - Extra Features
 ** [ ] Use .env config files & move project state "dev vs pro" to .env files + runtime var checks.
+
+== Useful Links
+- css vs scss vs style loaders :
+** https://stackoverflow.com/questions/43913420/css-loader-vs-style-loader-vs-sass-loader
+**

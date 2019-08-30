@@ -6,6 +6,6 @@
 </head>
 <body>
 <!--<script src="./source/index.js"></script>-->
-<script src="./assets/main.js"></script>
+<script src="./assets/app.js"></script>
 </body>
 </html>

@@ -1,10 +1,12 @@
-html{
+@import "../css/plain_css.css";
 
-    body{
-        padding: 10px;
-        border-right: 20px solid red;
-        div {
-            border-bottom: 1px dotted green;
-        }
+html {
+
+  body {
+    padding: 10px;
+    border-right: 20px solid orange;
+    div {
+      border-bottom: 4px dotted green;
     }
+  }
 }
