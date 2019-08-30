@@ -12,17 +12,19 @@ npm run build:v1
 - Webpack by default is designed for handling JS.
 -
 
-== Goals and ToDo
+== Config : Goals and ToDo
 
 === V1
+
 1. [x] Compile SCSS, CSS and JS into a single file.
 
 === V2
-1. Stable NPM setup with webpack SCSS, CSS and JS compiling
+
+1. [x] Stable NPM setup with webpack SCSS, CSS and JS compiling
 ** [x] Separate CSS from ouput JS, create one css file per entry point in the *same folder*.
 ** [x] Load separated CSS files .
 
-1. [x] Auto clean dist folder with `CleanWebpackPlugin`
+1.[x] Auto clean dist folder with `CleanWebpackPlugin`
 
 1. [x] Use nodeman for server restart
 a. add the following to _package.json > scripts_ : `"nodemon": "nodemon -w source/config/ --exec npm run build:v2" `
@@ -47,7 +49,7 @@ a. Run the above script using `npm run nodemon` to auto watch config folder and 
 
 
 
-==== V4
+=== V4
 1. Support NodeJS modules & workflow.
 1. Support post-css plugin
 1. [ ] Support Babel
