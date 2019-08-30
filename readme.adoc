@@ -1,6 +1,40 @@
 = Learning JS & NodeJS
 This repo is an experement to learn more about NodeJS, related libraries & automation tools.
 
+== Change Log
+- 20190828 - prac4/learning_webpack/test4_basic-setup : aimed at creating a base webpack config file for compiling JS, SCSS and assets . Check folder/readme.adoc
+
+
+== Artifacts
+
+=== Essentials:
+----
+sudo yum install -y gcc-c++ make
+
+----
+
+
+=== Installing NodeJS & NPM
+
+.nvm
+https://github.com/nvm-sh/nvm#installation-and-update
+----
+nvm ls
+nvm install 10
+nvm use 10
+
+
+----
+=== Fixing Node installation issues (Tested on Centos)
+----
+/bin/rm -rf /var/cache/yum
+/usr/bin/yum remove -y nodejs
+/bin/rm /etc/yum.repos.d/nodesource*
+/usr/bin/yum clean all
+/usr/bin/curl --silent --location https://rpm.nodesource.com/setup_8.x | bash -
+----
+as shown on:
+- https://github.com/nodesource/distributions/issues/486
 
 
 
