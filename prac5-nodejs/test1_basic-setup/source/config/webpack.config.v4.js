@@ -185,11 +185,18 @@ var webpackConfig = {
         }),
         new HtmlWebpackTagsPlugin({
             tags: [
+                // 'http://192.168.8.203:48801/livereload.js',
                 // 'http://webtest1.com:48801/livereload.js'
             ],
             append: true
         }),
+        new HtmlWebpackPlugin({
+            title: 'HTML 2',
+            filename: 'index2.html',
+            inject: 'body',
+            chunks: ['app']
 
+        }),
         // new webpack.ProvidePlugin({
         //     jQuery: 'jquery'
         // }),

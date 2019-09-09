@@ -3,10 +3,13 @@
 html {
 
   body {
-    padding: 10px;
-    border-right: 20px solid orange;
+    padding: 30px;
+    border-right: 10px solid orange;
     div {
       border-bottom: 4px dotted green;
+      min-height: 200px;
+      background: url("../images/twiter.jpg");
+      //background: url("../images/address-book.svg");
     }
   }
 }

@@ -37,17 +37,21 @@ a. Run the above script using `npm run nodemon` to auto watch config folder and 
 1. [x] Save CSS & JS files into corresponding folders. Done by setting the default output folder to /js/ then overriding other file types output folder.
 ** [x] Load separated files into the output html file. Done by default with _HtmlWebpackPlugin_!.
 
-1. Add url-loader for CSS assets
-** https://github.com/webpack-contrib/url-loader
-
-1. Output custom HTML code that contain tags only for easy inclusion in custom projects.
 
 
-1. [ ] Use `LiveReloadPlugins` for live refresh
-** used `HtmlWebpackTagsPlugin` to append js script.
+1. [ ]Output custom HTML code that contain tags only for easy inclusion in custom projects.
 
 
 
+1. [x] Install node dependency check tools
+** [x]_npm-check_
+** [x]_depcheck_
+
+1. image loaders
+** [x] Add "url-loader" to load images as base64 URL
+*** [x] limit to png+jpg+gif
+
+** [ ] Add "svg-loader" to load SVG file as utf-8 encoded DataUrl string
 
 === V4
 1. Support NodeJS modules & workflow.
@@ -58,6 +62,14 @@ a. Run the above script using `npm run nodemon` to auto watch config folder and 
 ** [ ] Test babel
 
 1. Support Browserify
+
+1. [ ] Auto optimize images.
+
+1. [ ] Use _LiveReloadPlugins_ for live refresh
+** used `HtmlWebpackTagsPlugin` to append js script.
+
+1. [ ] try _BrowserSyncPlugin_ *only if _LiveReloadPlugins_ doesn't work* .
+
 
 - Extra Features
 ** [ ] Use .env config files & move project state "dev vs pro" to .env files + runtime var checks.

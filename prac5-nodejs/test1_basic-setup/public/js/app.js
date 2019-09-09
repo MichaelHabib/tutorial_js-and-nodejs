@@ -81,20 +81,31 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./source/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./source/js/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./source/index.js":
-/*!*************************!*\
-  !*** ./source/index.js ***!
-  \*************************/
+/***/ "./source/css/plain_css.css":
+/*!**********************************!*\
+  !*** ./source/css/plain_css.css ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./source/css/plain_css.css?");
+
+/***/ }),
+
+/***/ "./source/js/index.js":
+/*!****************************!*\
+  !*** ./source/js/index.js ***!
+  \****************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_test_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/test.scss */ \"./source/scss/test.scss\");\n/* harmony import */ var _scss_test_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_test_scss__WEBPACK_IMPORTED_MODULE_0__);\n// import  _ from 'lodash';\r\n// import './css/plain_css.css';\r\n\r\n// import Icon from './images/icon.png';\r\n\r\nfunction component() {\r\n    const element = document.createElement('div');\r\n\r\n    // Lodash, currently included via a script, is required for this line to work\r\n    // element.innerHTML = _.join(['Hello', 'webpack'], ' ');\r\n\r\n    return element;\r\n}\r\n\r\ndocument.body.appendChild(component());\r\n\n\n//# sourceURL=webpack:///./source/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_plain_css_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/plain_css.css */ \"./source/css/plain_css.css\");\n/* harmony import */ var _css_plain_css_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_plain_css_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _scss_test_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../scss/test.scss */ \"./source/scss/test.scss\");\n/* harmony import */ var _scss_test_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scss_test_scss__WEBPACK_IMPORTED_MODULE_1__);\n// import  _ from 'lodash';\n\n // import Icon from './images/icon.png';\n\n/* OS,  FS & File management */\n// const path = require('path');\n// const fs = require('fs');\n// const util = require('util');\n//const exec = util.promisify(require('child_process'));\n// const exec = require('child_process');\n// const express = require('express');\n// const app = express();\n\nfunction component() {\n  var element = document.createElement('div'); // Lodash, currently included via a script, is required for this line to work\n  // element.innerHTML = _.join(['Hello', 'webpack'], ' ');\n\n  return element;\n}\n\ndocument.body.appendChild(component());\n\n//# sourceURL=webpack:///./source/js/index.js?");
 
 /***/ }),
 
