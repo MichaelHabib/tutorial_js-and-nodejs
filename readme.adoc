@@ -1,17 +1,33 @@
 = Learning JS & NodeJS
-This repo is an experement to learn more about NodeJS, related libraries & automation tools.
+This repo is an experiment to learn more about NodeJS, related libraries & automation tools.
 
 == Change Log
-- 20190828 - prac4/learning_webpack/test4_basic-setup : aimed at creating a base webpack config file for compiling JS, SCSS and assets . Check folder/readme.adoc
+- *Each folder should have a readme.adoc file explaining what it's purpose.*
 
 
 == Artifacts
 
 === Essentials:
 ----
-sudo yum install -y gcc-c++ make
-
+sudo apt install -y gcc-c++ make
 ----
+
+=== Useful Commands
+- List global packages `npm list -g --depth 0`
+- Vulnerability audit and fix `npm audit` and `npm audit fix`
+- Find reverse package dependency `npm ls PackageName`
+
+=== Folder Structure with NodeJS and Webpack
+
+- *bin/* :
+- *build/* : development & production webpack config
+- *config/* :
+** *config/inded.js* : main project config file.
+- *src/* : This is where most of the application code will go. Structure of content depends on the developer & typ of project.
+- *static/* : Any assets that needs to be only copied  and doesnt need to be process by webpack.
+- *test/* :
+- *node_modules/*
+
 
 
 === Installing NodeJS & NPM
@@ -23,8 +39,8 @@ nvm ls
 nvm install 10
 nvm use 10
 
-
 ----
+
 === Fixing Node installation issues (Tested on Centos)
 ----
 /bin/rm -rf /var/cache/yum
@@ -38,86 +54,4 @@ as shown on:
 
 
 
-== Prac 1 Notes
-- Basic JS examples & tests.
 
-== Prac 2 Notes
-- Using SCSS, NodeJS, webpack & yarn to create a PDF to Text converter.
-- Attempt to use non-standard project folder. This causes few problems.
-- Webpack output .js file is NOT configured correctly with legacy JS code.
-All legacy js code is being "copied" to the output folder.
-
-
-
-
-== Parc 3 Notes
-
-
-
-.Goals:
-- [ ] Attempt to use webpack correctly using NodeJS modules & default project structure.
-based on https://vuejs-templates.github.io/webpack/structure.html
-- [ ] use the http://tooling.github.io/book-of-modern-frontend-tooling/index.html[Book of Modern Fronten Tooling]
-to compeletly automate this project.
-- [ ] Create a list or guide for Top Must Have NodeJS modules & libraries.
-- [ ] Create a list or guide for Top Must Have webpack plugins.
-
-
-
-.Tasks:
-- [x] Setting up a NodeJS server
-- [x] Setup server reloader using _nodemon_
-- [x] Setup browser auto reloader using _live-reload-plugin_.
-- [ ] Dynamicly generate the livereload.js script tag used by LiveReloadPlugin.
-- [ ] Find out which dependencies should be devDepenencies only.
-- [x] Auto copy required static assets such as images .
-- [ ] Sync changes between ./static & ./dist/static . May need a separate watcher ?
-- [ ] Require CDN resources.
-- [ ] Add Foundation Site support.
-- [ ] Watch .php file changes. (might need to use nodemon?)
-- [ ] List all file extensions that need to be watched for change.
-- [ ] Add bable support to compile ES5+ code to standard JS.
-
-
-.Notes:
-- To use browser-refresh (recommended), execute `./../node_modules/browser-refresh/bin/browser-refresh app.js `
-- To start the server using nodemon (not recommended, use browser-refresh instead) , execute `./../node_modules/nodemon/bin/nodemon.js app.js`
-- LiveReloadPlugin uses port 8081
-
-
-== Parc 4 Notes
-
-
-== Lessons Learned
-- Use `webpack-livereload-plugin` to reload page not served via nodeJS or webpack server.
-FOr example: refresh a php page when CSSS or JS changes are made.
-
-
-=== Folder Structure with NodeJS and Webpack
-
- - *bin/* :
- - *build/* : development & production webpack config
-- *config/* :
-** *config/inded.js* : main project config file.
- - *src/* : This is where most of the application code will go. Structure of content depends on the developer & typ of project.
- - *static/* : Any assets that needs to be only copied  and doesnt need to be process by webpack.
- - *test/* :
- - *web_modules/*
-
-
-==== Sources
- - https://vuejs-templates.github.io/webpack/structure.html
-
-
-=== Folder Structure with VueJS
-ToDo
-
-=== Folder Structure with ReactJS
-ToDo
-
-
-=== Recommended NodeJS Modules & Libraries
-ToDo
-
-=== Recommended Webpack Plugins
-ToDo

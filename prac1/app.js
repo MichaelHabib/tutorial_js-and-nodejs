@@ -1,4 +1,4 @@
-include("./dom_manager.js");
+// include("./dom_manager.js");
 /*
  * ********************************************
  * el() create element

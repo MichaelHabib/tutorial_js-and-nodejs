@@ -1,5 +1,6 @@
 const util = require('util')
-// const os = require( 'os' );
+const os = require('os');
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
@@ -9,8 +10,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const __filename__ = path.basename(__filename);
+const {d, dd} = require("../js/debugger");
+
+const emmet_script = require('../js/emmet').run();
+// emmet_script.run();
 
 
+process.env['DEBUG'] = true;
 const devMode = process.env.NODE_ENV !== 'production';
 
 var config = {};
@@ -35,11 +42,15 @@ config.paths.dist_fonts = path.join(`${config.paths.dist}`, `fonts/`);
 config.enabled = {};
 config.enabled.sourceMaps = true;
 
-console.log(`== config.paths.root = ${config.paths.root}`);
-
 
 var webpackConfig = {
-    mode: 'development',
+    // node: {
+    //     // fs: "empty"
+    // },
+
+    target: "node", //web (default) | node
+
+    mode: devMode ? 'development' : 'production',
     context: `${config.paths.root}`,
 
     entry: {
@@ -181,7 +192,8 @@ var webpackConfig = {
             chunkFilename: devMode ? 'css/[id].css' : 'css/[id].[hash].css',
         }),
         new HtmlWebpackPlugin({
-            // title: 'Output Management'
+            title: `HTML of ${__filename__}`,
+            // template: emmet_script_html
         }),
         new HtmlWebpackTagsPlugin({
             tags: [
@@ -218,7 +230,7 @@ var webpackConfig = {
         }),
         new CleanWebpackPlugin({
             // root: `${config.paths.root}`,
-            // exclude: ['shared.js'],
+            // exclude: [`${config.paths.dist}/keep`],
             cleanOnceBeforeBuildPatterns: [`${config.paths.dist}/*`],
             verbose: true,
             // dry: true
@@ -228,5 +240,6 @@ var webpackConfig = {
         ]),
     ]
 };
+
 
 module.exports = webpackConfig;
