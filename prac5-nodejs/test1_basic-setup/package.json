@@ -39,7 +39,7 @@
     "@babel/polyfill": "^7.4.4",
     "depcheck": "^0.8.3",
     "emmet": "^2.0.0-rc.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "npm-check": "^5.9.0"
   },
 
