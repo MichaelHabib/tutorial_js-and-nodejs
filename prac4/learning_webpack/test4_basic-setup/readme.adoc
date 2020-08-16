@@ -8,11 +8,13 @@ npm run build:v1
 
 ----
 == Goals and ToDo
-- Stage 1 - Stable NPM setup with webpack SCSS, CSS and JS compiling
+1. Stable NPM setup with webpack SCSS, CSS and JS compiling
 
 
-- Stage 2 - use yarn & use live reload server
+1. Add live reload server (check prac3 for example)
+
+1. Use yarn
 
 
-- Extra Features
+1. Extra Features
 ** [ ] Use .env config files & move project state "dev vs pro" to .env files + runtime var checks.
