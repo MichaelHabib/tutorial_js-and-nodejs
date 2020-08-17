@@ -18,6 +18,10 @@ config.paths = {};
 config.paths.root = path.resolve(__dirname, `../../`);
 config.paths.src = path.join(`${config.paths.root}`, `source/`);
 config.paths.dist = path.join(`${config.paths.root}`, `assets/`);
+config.paths.dist_js = path.join(`${config.paths.dist}`, `js/`);
+config.paths.dist_css = path.join(`${config.paths.dist}`, `css/`);
+config.paths.dist_images = path.join(`${config.paths.dist}`, `images/`);
+config.paths.dist_fonts = path.join(`${config.paths.dist}`, `fonts/`);
 /*  options  */
 config.enabled = {};
 config.enabled.sourceMaps = true;
@@ -33,19 +37,53 @@ var webpackConfig = {
 
     },
     output: {
-        filename: '[name].js',
+        filename: 'js/[name].js',
         path: `${config.paths.dist}`
     },
     devtool: 'eval',
     module: {
         rules: [
             {
+                test: /\.js/,
+                exclude: [
+                    '/node_modules/',
+                ],
+                use: [
+                    // {
+                    //     loader: 'babel-loader',
+                    //     options: {
+                    //         presets: ['babel-preset-env']
+                    //     }
+                    // }
+                    //         {
+                    //             loader: 'file-loader',
+                    //             options: {
+                    //                 // name: 'js/[name].js',
+                    //             }
+                    //         }
+                ]
+            },
+            {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    // Extract CSS into a separate file.
 
+                    // {
+                    //     loader: 'file-loader',
+                    //     options: {
+                    //         name: `[name].[ext]`,
+                    //     }
+                    // },
+                    // Creates `style` nodes from JS strings. Use JS Module to insert style into the page.
+                    // {
+                    //     loader: "style-loader",
+                    // },
+                    // Extract CSS into a separate file.
                     {
                         loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            // publicPath: `${config.paths.dist_css}`, // Not working !
+
+                        }
                     },
                     // Translates CSS into CommonJS - CSS to JS Module
                     {
@@ -58,7 +96,8 @@ var webpackConfig = {
                     {
                         loader: "sass-loader",
                         options: {
-
+                            // name: 'css/[name].sass-loader.css',
+                            // includePaths: [`${config.paths.src}/scss`],
                             sourceMap: true,
                             sourceComments: true,
                         }
@@ -83,6 +122,7 @@ var webpackConfig = {
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output
             // both options are optional
+            // filename: devMode ? '[name].css' : '[name].[hash].css',
             filename: devMode ? 'css/[name].css' : 'css/[name].[hash].css',
             chunkFilename: devMode ? 'css/[id].css' : 'css/[id].[hash].css',
         }),
@@ -95,6 +135,9 @@ var webpackConfig = {
             ],
             append: true
         }),
+        // new webpack.ProvidePlugin({
+        //     jQuery: 'jquery'
+        // }),
         new LiveReloadPlugin({
             'appendScriptTag ': true,
             'protocol': 'http',
@@ -103,6 +146,8 @@ var webpackConfig = {
             'hostname': '192.168.8.203',
         }),
         new CleanWebpackPlugin({
+            // root: `${config.paths.root}`,
+            // exclude: ['shared.js'],
             cleanOnceBeforeBuildPatterns: [`${config.paths.dist}/*`],
             verbose: true,
             // dry: true

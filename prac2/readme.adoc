@@ -1,0 +1,5 @@
+== Prac 2 Notes
+- Using SCSS, NodeJS, webpack & yarn to create a PDF to Text converter.
+- Attempt to use non-standard project folder. This causes few problems.
+- Webpack output .js file is NOT configured correctly with legacy JS code.
+All legacy js code is being "copied" to the output folder.

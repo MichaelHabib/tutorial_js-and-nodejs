@@ -1,0 +1,106 @@
+.bootstrap-wirefame main {
+  padding-top: 120px; }
+
+.bootstrap-wirefame .social-icons {
+  color: #fff; }
+  .bootstrap-wirefame .social-icons li {
+    margin: 5px; }
+
+.bootstrap-wirefame .container,
+.bootstrap-wirefame .row,
+.bootstrap-wirefame .col {
+  /*padding: 5px;*/ }
+
+.bootstrap-wirefame .container-fluid {
+  background: rgba(242, 249, 210, 0.8);
+  border: 1px solid rgba(191, 223, 32, 0.8); }
+
+.bootstrap-wirefame .container {
+  background: rgba(215, 244, 220, 0.8);
+  border: 1px solid rgba(133, 173, 139, 0.8);
+  margin-top: 1rem;
+  margin-bottom: 1rem; }
+
+.bootstrap-wirefame .row {
+  background: rgba(215, 234, 244, 0.8);
+  border: 1px solid rgba(133, 160, 173, 0.8);
+  margin: 0.5rem -10px;
+  padding: 5px; }
+
+.bootstrap-wirefame .row > [class^="col-"] {
+  /*background: hsla(200, 0%, 90%, 0.8);*/
+  /*border: 1px solid hsla(200, 0%, 60%, 0.8);*/
+  background: #fff;
+  border: 1px dotted #ddd;
+  min-height: 20px;
+  margin-bottom: 5px; }
+
+.bootstrap-wirefame .navbar .container,
+.bootstrap-wirefame .navbar .container-fluid {
+  display: block; }
+
+.bg-blue-alpha {
+  background: rgba(215, 234, 244, 0.8);
+  border: 1px solid rgba(133, 160, 173, 0.8); }
+
+.bg-green-alpha {
+  background: rgba(215, 244, 220, 0.8);
+  border: 1px solid rgba(133, 173, 139, 0.8); }
+
+.bg-grey-alpha {
+  background: rgba(230, 230, 230, 0.8);
+  border: 1px solid rgba(153, 153, 153, 0.8); }
+
+.width100 {
+  width: 100%; }
+
+.image-placeholder {
+  width: 100%;
+  display: block;
+  position: relative;
+  background-image: url("../images/placeholder-image.jpg") !important;
+  background-position: center center !important; }
+
+.image-placeholder:after {
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 10%;
+  color: #ddd; }
+
+.size50px50px {
+  width: 50px;
+  height: 50px; }
+
+.size100px100px {
+  width: 100px;
+  height: 100px; }
+
+.h100px {
+  height: 100px; }
+
+.h200px {
+  height: 200px; }
+
+.h300px {
+  height: 300px; }
+
+.h400px {
+  height: 400px; }
+
+.h500px {
+  height: 500px; }
+
+.bg-grey1 {
+  background: #eee; }
+
+.bg-grey2 {
+  background: #ddd; }
+
+.bg-grey3 {
+  background: #ccc; }
+
+.bg-grey4 {
+  background: #bbb; }

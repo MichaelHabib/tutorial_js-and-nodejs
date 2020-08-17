@@ -1,12 +1,15 @@
-const util = require('util')
-// const os = require( 'os' );
+/*
+What's included ?
+- SCSS compiler
+- Combine CSS & JS into one file (main.js)
+
+ */
+
 const path = require('path');
-// const webpack = require('webpack');
+const webpack = require('webpack');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackTagsPlugin = require('html-webpack-tags-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 const devMode = process.env.NODE_ENV !== 'production';
@@ -22,18 +25,17 @@ config.paths.dist = path.join(`${config.paths.root}`, `assets/`);
 config.enabled = {};
 config.enabled.sourceMaps = true;
 
-console.log(`== config.paths.root = ${config.paths.root}`);
+console.log(`- config.paths.root = ${config.paths.root}`);
 
 var webpackConfig = {
     mode: 'development',
     context: `${config.paths.root}`,
 
     entry: {
-        app: './source/index.js',
-
+        app: './source/index.js'
     },
     output: {
-        filename: '[name].js',
+        filename: 'main.js',
         path: `${config.paths.dist}`
     },
     devtool: 'eval',
@@ -42,23 +44,26 @@ var webpackConfig = {
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    // Extract CSS into a separate file.
-
+                    // {
+                    //     loader: 'file-loader',
+                    //     options: {
+                    //         name: `css/[name].[ext]`,
+                    //     }
+                    // },
                     {
-                        loader: MiniCssExtractPlugin.loader,
+                        loader: "style-loader",
                     },
-                    // Translates CSS into CommonJS - CSS to JS Module
                     {
                         loader: "css-loader",
                         options: {
                             sourceMap: true,
                         },
                     },
-                    // Compiles Sass to CSS - SCSS to CSS
                     {
                         loader: "sass-loader",
                         options: {
-
+                            name: 'css/[name].sass-loader.css',
+                            includePaths: [`${config.paths.source}scss`],
                             sourceMap: true,
                             sourceComments: true,
                         }
@@ -78,36 +83,24 @@ var webpackConfig = {
             }
         ]
     },
-
     plugins: [
-        new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: devMode ? 'css/[name].css' : 'css/[name].[hash].css',
-            chunkFilename: devMode ? 'css/[id].css' : 'css/[id].[hash].css',
-        }),
-        new HtmlWebpackPlugin({
-            // title: 'Output Management'
-        }),
-        new HtmlWebpackTagsPlugin({
-            tags: [
-                'http://192.168.8.203:8889/livereload.js'
-            ],
-            append: true
-        }),
-        new LiveReloadPlugin({
-            'appendScriptTag ': true,
-            'protocol': 'http',
-            'port': 8889,
-            // 'hostname': 'webtest1.com',
-            'hostname': '192.168.8.203',
-        }),
+        // new MiniCssExtractPlugin({
+        //     // Options similar to the same options in webpackOptions.output
+        //     // both options are optional
+        //     filename: devMode ? '[name].css' : '[name].[hash].css',
+        //     chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+        // }),
+        // new HtmlWebpackPlugin({
+        //     title: 'Output Management'
+        // }),
         new CleanWebpackPlugin({
-            cleanOnceBeforeBuildPatterns: [`${config.paths.dist}/*`],
+            // root: `${config.paths.root}`,
+            // exclude: ['shared.js'],
             verbose: true,
-            // dry: true
+            dry: false
         }),
     ]
 };
+
 
 module.exports = webpackConfig;

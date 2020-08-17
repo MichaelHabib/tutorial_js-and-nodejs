@@ -1,9 +1,9 @@
-
 <html>
-    <head>
-        <meta charset="UTF-8"/>
-        <title>Learning JS and NodeJS</title>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Learning JS and NodeJS</title>
 
+<<<<<<< HEAD:index.html
     </head>
     <body>
         <a href="prac1-vanilla-js-basics/">Prac1</a>
@@ -11,4 +11,18 @@
         <a href="prac3/">Prac3</a>
         <a href="prac4/">Prac4</a>
     </body>
+=======
+</head>
+<body>
+<ul>
+	<?php
+	$files = scandir(__DIR__);
+//	var_dump($files);
+	foreach ($files as $file) {
+		echo "<li><a href=\"$file\">$file</a></li>";
+	}
+	?>
+</ul>
+</body>
+>>>>>>> fdbc791c3f84464285ca6ddaf1ab38d8a350ffda:index.php
 </html>

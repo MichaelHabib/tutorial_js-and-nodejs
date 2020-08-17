@@ -1,0 +1,33 @@
+
+== Parc 3 Notes
+
+.Goals:
+- [ ] Attempt to use webpack correctly using NodeJS modules & default project structure.
+based on https://vuejs-templates.github.io/webpack/structure.html
+- [ ] use the http://tooling.github.io/book-of-modern-frontend-tooling/index.html[Book of Modern Fronten Tooling]
+to compeletly automate this project.
+- [ ] Create a list or guide for Top Must Have NodeJS modules & libraries.
+- [ ] Create a list or guide for Top Must Have webpack plugins.
+
+
+
+.Tasks:
+- [x] Setting up a NodeJS server
+- [x] Setup server reloader using _nodemon_
+- [x] Setup browser auto reloader using _live-reload-plugin_.
+- [ ] Dynamicly generate the livereload.js script tag used by LiveReloadPlugin.
+- [ ] Find out which dependencies should be devDepenencies only.
+- [x] Auto copy required static assets such as images .
+- [ ] Sync changes between ./static & ./dist/static . May need a separate watcher ?
+- [ ] Require CDN resources.
+- [ ] Add Foundation Site support.
+- [ ] Watch .php file changes. (might need to use nodemon?)
+- [ ] List all file extensions that need to be watched for change.
+- [ ] Add bable support to compile ES5+ code to standard JS.
+
+
+.Notes:
+- To use browser-refresh (recommended), execute `./../node_modules/browser-refresh/bin/browser-refresh app.js `
+- To start the server using nodemon (not recommended, use browser-refresh instead) , execute `./../node_modules/nodemon/bin/nodemon.js app.js`
+- LiveReloadPlugin uses port 8081
+
