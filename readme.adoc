@@ -5,19 +5,18 @@ This repo is an experiment to learn more about NodeJS, related libraries & autom
 - *Each folder should have a readme.adoc file explaining what it's purpose.*
 
 
-== Artifacts
 
-=== Essentials:
+== Essentials:
 ----
 sudo apt install -y gcc-c++ make
 ----
 
-=== Useful Commands
+== Useful Commands
 - List global packages `npm list -g --depth 0`
 - Vulnerability audit and fix `npm audit` and `npm audit fix`
 - Find reverse package dependency `npm ls PackageName`
 
-=== Folder Structure with NodeJS and Webpack
+== Folder Structure with NodeJS and Webpack
 
 - *bin/* :
 - *build/* : development & production webpack config
@@ -30,7 +29,7 @@ sudo apt install -y gcc-c++ make
 
 
 
-=== Installing NodeJS & NPM
+== Installing NodeJS & NPM
 
 .nvm
 https://github.com/nvm-sh/nvm#installation-and-update
@@ -40,7 +39,6 @@ nvm install 10
 nvm use 10
 
 ----
-
 === Fixing Node installation issues (Tested on Centos)
 ----
 /bin/rm -rf /var/cache/yum
