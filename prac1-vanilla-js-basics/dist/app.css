@@ -1,0 +1,15 @@
+main {
+  padding: 10px;
+  border: 2px solid green;
+}
+
+aside {
+  padding: 10px;
+  border: 2px solid blue;
+}
+
+div {
+  padding: 10px;
+  border: 1px dotted #555;
+}
+

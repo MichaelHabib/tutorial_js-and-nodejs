@@ -1927,50 +1927,31 @@ var testValue = function testValue($var, $varNameString, $varValueString) {
 // testValue("79", 'myNumberAsString', '"79"');
 // testValue(Math.pow(10, 1000), 'myInfiniteNumber', 'Math.pow(10, 1000)');
 // testValue(NaN, 'myNaN', 'NaN');
-
-
-testValue(undefined, 'myUndefined', 'undefined'); // testValue(true, 'myTrueBool', 'true');
+// testValue(undefined, 'myUndefined', 'undefined');
+// testValue(true, 'myTrueBool', 'true');
 // testValue(false, 'myFalseBool', 'false');
+// ************************************************************
+//  Simple DOM Manupliaton
 
-/*
- ************************************************************
- * el() create element
- */
 
-var el = function el(elem) {
-  return document.createElement(elem);
-};
+var c1 = document.createElement('div');
+c1.classList.add('c1-container', 'container'); // c1.textContent='c1 textContent'; //?
+// c1.innerText='c1 innerText'; //?
 
-var elem, container, parent, child, body;
-container = el("div");
-container.classList.add("ui", "container");
-container.id = "container1";
-document.body.appendChild(container);
-parent = container;
-elem = el("div");
-elem.classList.add("ui", "two", "column", "grid");
-elem.id = "el3";
-elem.style["text-align"] = "left";
-parent.appendChild(elem);
-/*  column 1 */
-
-parent = elem;
-elem = el("div");
-elem.classList.add("column");
-parent.appendChild(elem);
-parent = elem;
-elem = el("div");
-elem.classList.add("ui", "primary", "button");
-elem.id = "button1";
-elem.setAttribute("onClick", "alert('hii')");
-elem.innerHTML = "button1 - say hii";
-parent.appendChild(elem);
-/*  column 2 */
-
-parent = elem;
-elem = el("div");
-elem.classList.add("column");
-parent.appendChild(elem);
+c1.innerHTML = 'c1 innerHTML';
+c1.id = "c1";
+c1.style["text-align"] = "left";
+var hr1 = document.createElement('hr');
+c1.appendChild(hr1);
+c1.appendChild(hr1.cloneNode());
+c1.appendChild(hr1.cloneNode());
+var b1 = document.createElement('button');
+b1.innerText = "Click then check console log!";
+b1.setAttribute("onClick", "window.console.log(this)");
+c1.appendChild(b1);
+document.body.append(c1);
+var q1 = document.querySelectorAll('hr');
+Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(q1);
 
 /***/ }),
 
