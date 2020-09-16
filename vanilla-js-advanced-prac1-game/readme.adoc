@@ -1,10 +1,10 @@
-= Prac1 - Vanilla JS Basics
+= vanilla-js-advanced-prac1-game
 
 == Docker Setup
 ----
 sudo chown -Rv $USER:$USER .
 
-export image_name=js-prac1
+export image_name=vanilla-js-advanced-prac1-game
 docker run -it --name $image_name -p 35729:35729 --volume="$PWD:/app" mhart/alpine-node sh
 docker start -a $image_name
 docker exec -it $image_name sh

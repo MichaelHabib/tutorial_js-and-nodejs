@@ -1,0 +1,32 @@
+{
+  "name": "pract1-vanilla-js-basics",
+  "version": "0.0.1",
+  "description": "= Prac1 - Vanilla JS Basics",
+  "main": "index.js",
+  "scripts": {
+    "watch2": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.mix.js",
+    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "nodemonConfig": {
+    "watch": "./webpack.mix.js",
+    "exec": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "laravel-mix": "^5.0.5",
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.26.10",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.12",
+    "webpack-livereload-plugin": "^1.2.0"
+  },
+  "dependencies": {
+    "debugdump": "file:node_modules_local/debugdump",
+    "nodemon": "^2.0.4",
+    "type-check": "^0.4.0"
+  }
+}

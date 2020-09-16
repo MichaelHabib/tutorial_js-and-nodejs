@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Michael Habib <contact@michaelhabib.name>",
   "homepage": "https://michaelhabib.name",
-  "private": false,
+  "private": true,
   "repository": {
     "type": "git",
     "url": ""
