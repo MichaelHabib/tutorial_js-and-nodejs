@@ -100,8 +100,66 @@ var dd = function (message) {
     console.log(message);
 
 }
+
 /* harmony default export */ __webpack_exports__["default"] = (dd);
 
+
+/***/ }),
+
+/***/ "./node_modules_local/printvaluetype/index.js":
+/*!****************************************************!*\
+  !*** ./node_modules_local/printvaluetype/index.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var debugdump__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! debugdump */ "./node_modules_local/debugdump/index.js");
+
+
+function printvaluetype ($var, $varNameString, $varValueString) {
+
+    // let getVarNam = (obj) => {
+    //     return Object.keys(obj)[0];
+    //     // return Object.keys(obj);
+    // };
+    // let $varName = getVarNam($var);
+    // let $varValue = $var[$varName];
+    // let $evalString = 'var ' + $varNameString + " = " + $varValueString;
+    // dd($evalString);
+
+
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])('= Testing : let ' + $varNameString + ' = ' + $varValueString);
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])('- value of ' + $varNameString + ' = ' + $var);
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])('- type of ' + $varNameString + ' = ' + typeof $var);
+
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(`- Number.isNaN(${$varNameString})` + ' = ' + Number.isNaN($var));
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(`- Number.isInteger(${$varNameString})` + ' = ' + Number.isInteger($var));
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(`- Number.isSafeInteger(${$varNameString})` + ' = ' + Number.isSafeInteger($var));
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(`- Number.isFinite(${$varNameString})` + ' = ' + Number.isFinite($var));
+
+
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(`- Array.isArray(${$varNameString})` + ' = ' + Array.isArray($var));
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(`- Object.prototype.toString.call(${$varNameString})` + ' = ' + Object.prototype.toString.call($var));
+
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(`- undefined + ${$varNameString} below: `);
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(undefined + $var);
+
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(`- 5 + ${$varNameString} below: `);
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(5 + $var);
+
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(`- 5 - ${$varNameString} below: `);
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(5 - $var);
+
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(`- 5 * ${$varNameString} below: `);
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(5 * $var);
+
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(`- 5 / ${$varNameString} below: `);
+    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(5 / $var);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (printvaluetype);
 
 /***/ }),
 
@@ -115,6 +173,7 @@ var dd = function (message) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var debugdump__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! debugdump */ "./node_modules_local/debugdump/index.js");
+/* harmony import */ var printvaluetype__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! printvaluetype */ "./node_modules_local/printvaluetype/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -127,74 +186,23 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
  // ************************************************************
-//  Simple DOM Manipulation
-
-var container1 = document.createElement('div');
-container1.classList.add('c1-container', 'container'); // c1.textContent='c1 textContent'; //?
-// c1.innerText='c1 innerText'; //?
-
-container1.innerHTML = 'c1 innerHTML';
-container1.id = "c1";
-container1.style["text-align"] = "left";
-var hr1 = document.createElement('hr');
-container1.appendChild(hr1);
-container1.appendChild(hr1.cloneNode());
-container1.appendChild(hr1.cloneNode());
-var button1 = document.createElement('button');
-button1.innerText = "Click then check console log!";
-button1.setAttribute("onClick", "window.console.log(this)");
-container1.appendChild(button1);
-document.body.append(container1);
-var query1 = document.querySelectorAll('hr');
-Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])('= find and log all <hr> elements');
-Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(query1); // ************************************************************
 //  Testing variable types under certain conditions
-
-var testValue = function testValue($var, $varNameString, $varValueString) {
-  // let getVarNam = (obj) => {
-  //     return Object.keys(obj)[0];
-  //     // return Object.keys(obj);
-  // };
-  // let $varName = getVarNam($var);
-  // let $varValue = $var[$varName];
-  // let $evalString = 'var ' + $varNameString + " = " + $varValueString;
-  // dd($evalString);
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])('= Testing : let ' + $varNameString + ' = ' + $varValueString);
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])('- value of ' + $varNameString + ' = ' + $var);
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])('- type of ' + $varNameString + ' = ' + _typeof($var));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("- Number.isNaN(".concat($varNameString, ")") + ' = ' + Number.isNaN($var));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("- Number.isInteger(".concat($varNameString, ")") + ' = ' + Number.isInteger($var));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("- Number.isSafeInteger(".concat($varNameString, ")") + ' = ' + Number.isSafeInteger($var));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("- Number.isFinite(".concat($varNameString, ")") + ' = ' + Number.isFinite($var));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("- Array.isArray(".concat($varNameString, ")") + ' = ' + Array.isArray($var));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("- Object.prototype.toString.call(".concat($varNameString, ")") + ' = ' + Object.prototype.toString.call($var));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("- undefined + ".concat($varNameString, " below: "));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(undefined + $var);
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("- 5 + ".concat($varNameString, " below: "));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(5 + $var);
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("- 5 - ".concat($varNameString, " below: "));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(5 - $var);
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("- 5 * ".concat($varNameString, " below: "));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(5 * $var);
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("- 5 / ".concat($varNameString, " below: "));
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(5 / $var);
-}; // const whatsMyName = "Snoop Doggy Dogg";
+// const whatsMyName = "Snoop Doggy Dogg";
 // console.log("Variable name is: " + name({whatsMyName}));
-// testValue('myString Here', 'myString', '"myString Here"');
-// testValue(4, 'myIntNumber', '4');
-// testValue(46.222, 'myFloatNumber', '46.222');
-// testValue("79", 'myNumberAsString', '"79"');
-// testValue(Math.pow(10, 1000), 'myInfiniteNumber', 'Math.pow(10, 1000)');
-// testValue(NaN, 'myNaN', 'NaN');
-// testValue(undefined, 'myUndefined', 'undefined');
-// testValue(true, 'myTrueBool', 'true');
-// testValue(false, 'myFalseBool', 'false');
-// testValue(function(){}, 'myFunction', 'function(){}');
-// testValue({prop:"value"}, 'myObject', '{prop:"value"}');
-// testValue(['item1','item2'], 'myArray', "[\'item1\',\'item2\']");
+// printvaluetype('myString Here', 'myString', '"myString Here"');
+// printvaluetype(4, 'myIntNumber', '4');
+// printvaluetype(46.222, 'myFloatNumber', '46.222');
+// printvaluetype("79", 'myNumberAsString', '"79"');
+// printvaluetype(Math.pow(10, 1000), 'myInfiniteNumber', 'Math.pow(10, 1000)');
+// printvaluetype(NaN, 'myNaN', 'NaN');
+// printvaluetype(undefined, 'myUndefined', 'undefined');
+// printvaluetype(true, 'myTrueBool', 'true');
+// printvaluetype(false, 'myFalseBool', 'false');
+// printvaluetype(function(){}, 'myFunction', 'function(){}');
+// printvaluetype({prop:"value"}, 'myObject', '{prop:"value"}');
+// printvaluetype(['item1','item2'], 'myArray', "[\'item1\',\'item2\']");
 
 /* ************************************************************
 * Arrays & Loops
@@ -203,7 +211,6 @@ var testValue = function testValue($var, $varNameString, $varValueString) {
 /*
 Create Array
 */
-
 
 var myAlphabetA2EArray = ['a', 'b', 'c', 'd', 'e'];
 var myAlphabetF2KArray = ['f', 'g', 'h', 'i', 'j', 'k'];
@@ -263,7 +270,7 @@ Simple forEach loop
  */
 
 myAlphabetArray.forEach(function (v, i) {
-  Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("".concat(i, " : ").concat(v));
+  dd("".concat(i, " : ").concat(v));
 });
 myNatoPhoneticAlphabetArray.forEach(function (v, i) {// dd(`${i} : ${v}`);
 });
@@ -296,10 +303,10 @@ var switchKey = "x";
 
 switch (switchKey) {
   case "x":
-    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("switchKey = x , but no break command, so keep looking!");
+    dd("switchKey = x , but no break command, so keep looking!");
 
   default:
-    Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])("default switch case here ...");
+    dd("default switch case here ...");
 }
 /*
 * ************************************************************
@@ -310,7 +317,7 @@ switch (switchKey) {
 var myMap = new Map();
 myMap.set('v', 'VVV');
 myMap.set('a', 'AAA');
-Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(myMap.entries());
+dd(myMap.entries());
 
 /***/ }),
 
@@ -332,8 +339,8 @@ Object(debugdump__WEBPACK_IMPORTED_MODULE_0__["default"])(myMap.entries());
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /app/src/app.js */"./src/app.js");
-module.exports = __webpack_require__(/*! /app/src/app.scss */"./src/app.scss");
+__webpack_require__(/*! /mnt/app/vanilla-js/src/app.js */"./src/app.js");
+module.exports = __webpack_require__(/*! /mnt/app/vanilla-js/src/app.scss */"./src/app.scss");
 
 
 /***/ })

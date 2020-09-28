@@ -4,7 +4,7 @@
   "description": "= Prac1 - Vanilla JS Basics",
   "main": "index.js",
   "scripts": {
-    "watch2": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.mix.js",
+    "watch2": "NODE_lsENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.mix.js",
     "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "debugdump": "file:node_modules_local/debugdump",
+    "printvaluetype": "file:node_modules_local/printvaluetype",
     "nodemon": "^2.0.4",
     "type-check": "^0.4.0"
   }
