@@ -1,6 +1,0 @@
-= Prac1 - Vanilla JS Basics
-
-== Docker Setup
-
-
-

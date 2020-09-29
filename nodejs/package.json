@@ -22,12 +22,14 @@
     "sass": "^1.26.10",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.12",
+    "printvaluetype": "file:node_modules_local/printvaluetype",
+    "debugdump": "file:node_modules_local/debugdump",
+    "nodemon": "^2.0.4",
     "webpack-livereload-plugin": "^1.2.0"
   },
   "dependencies": {
-    "debugdump": "file:node_modules_local/debugdump",
-    "printvaluetype": "file:node_modules_local/printvaluetype",
-    "nodemon": "^2.0.4",
+    "is_js": "^0.9.0",
+    "lodash": "^4.17.20",
     "type-check": "^0.4.0"
   }
 }

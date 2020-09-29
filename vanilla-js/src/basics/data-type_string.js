@@ -16,7 +16,7 @@ function this_line(stack_item_index = 2, show_filepath = true) {
     return message;
 }
 
-var dd = function (message, stack_item_index = 3, show_filepath = true) {
+const dd = function (message, stack_item_index = 3, show_filepath = true) {
 
     console.log(message);
     console.log('|_ ' + this_line(stack_item_index, show_filepath));
@@ -36,7 +36,8 @@ dd('= Start of Vanilla JS Basics - String Data Type Guide')
 * */
 
 let my_string = "This is my string !"
-let my_string2 = "This is my second string !!"
+let my_string_object = new String("This is my second string !!");
+
 
 /*
 * ************************************************************
@@ -44,6 +45,10 @@ let my_string2 = "This is my second string !!"
 * */
 dd(typeof my_string); // prints "string"
 dd(my_string.length); // prints "19"
+
+dd(my_string_object); // prints "[String: 'This is my second string !!']"
+dd(my_string_object.valueOf()); // prints "This is my second string !!"
+dd(my_string_object.constructor.name) // prints "String"
 
 /*
 * ************************************************************
@@ -101,3 +106,19 @@ dd(my_string.replace(/IS/ig, 'huh')); // prints 'Thhuh huh my string !', replaci
 dd(my_string.split('')); // prints an array of single characters.
 dd(my_string.split(' ')); // prints an array of words that were separated by a space.
 
+
+/*
+* ************************************************************
+* Converting string to other data types.
+* */
+
+// dd(Number(my_string));
+
+/*
+* ************************************************************
+* isString()
+* */
+
+function isString (value) {
+    return typeof value === 'string' || value instanceof String;
+}
