@@ -1,9 +1,10 @@
 {
   "name": "pract1-vanilla-js-basics",
   "version": "0.0.1",
-  "description": "= Prac1 - Vanilla JS Basics",
+  "description": "",
   "main": "index.js",
   "scripts": {
+    "nodemon_watch": "nodemon",
     "watch2": "NODE_lsENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=webpack.mix.js",
     "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",

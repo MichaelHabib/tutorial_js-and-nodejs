@@ -1,5 +1,21 @@
 = Vanilla JS Guide
 
+== Usage
 
+Simply run each file with nodejs directly or use `npm run nodemon_watch -- $file_name` to watch then re-execute the file on change.
+
+== Conclusions
+
+=== Numbers
+
+- Safe *integers* are (2^53 - 1) to -(2^53 - 1), this *excludes* decimal numbers.
+-apest pritn
+-
+
+
+== ToDo
+
+- Refactor the code
+** Place output comment AFTER the console.log statements.
 == Credits
 - https://webbjocke.com/javascript-check-data-types/

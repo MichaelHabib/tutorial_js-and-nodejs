@@ -1,0 +1,9 @@
+= NodeJS Guide
+
+
+== Recommended Packages
+
+- Validation
+** https://www.npmjs.com/package/is_js[is_js] : A general purpose check library.
+- Math
+** https://www.npmjs.com/package/mathjs[mathjs]
