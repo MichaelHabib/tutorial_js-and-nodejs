@@ -2,7 +2,7 @@
 
 == Usage
 
-Simply run each file with nodejs directly or use `npm run nodemon_watch -- $file_name` to watch then re-execute the file on change.
+Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $file_name` to watch then re-execute the file on change.
 
 == Conclusions
 

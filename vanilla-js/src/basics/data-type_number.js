@@ -31,10 +31,6 @@ const dd = function (message, stack_item_index = 3, show_filepath = true) {
 * ************************************************************
  * */
 
-/*
-* ************************************************************
-*
-* */
 
 
 /*
@@ -43,11 +39,12 @@ const dd = function (message, stack_item_index = 3, show_filepath = true) {
 * */
 
 
-// Returns max allowed JS number
 dd(Number.MAX_VALUE);
+// Returns '1.7976931348623157e+308', the max allowed JS number which is NOT accurate number!
 
-// Returns min allowed JS number
 dd(Number.MIN_VALUE);
+// Returns '5e-324', the min allowed JS number which is NOT accurate number!
+
 
 // Returns max safe JS number : 9007199254740991
 dd(Number.MAX_SAFE_INTEGER);
@@ -224,17 +221,11 @@ dd(Number.isNaN(Math.sqrt(-2)));
 dd(Number.isNaN(Number(undefined)));
 // Returns 'true', converting undefined to a number returns NaN
 
-
-dd(Number.isNaN(Number('3e5')));
-// Returns 'true',eap a5 printing
-
-
 dd(Number.isNaN(Number('my string')));
 // Returns 'true', converting a non-number string to a number returns NaN
 
-
-dd_enabled = false;
-
+dd(Number.isNaN(Number('3e5')));
+// Returns 'false', '3e4' is a number written in exponential notation.
 
 dd(Number.isNaN(parseInt(undefined)));
 // Returns 'true', parsing undefined to int returns NaN.
@@ -257,16 +248,16 @@ dd(Number.isSafeInteger(Math.pow(2, 53)));
 // Returns 'false', as 2^53-1 is the max safe number.
 
 dd(Number.isSafeInteger(Math.pow(2, 53) - 1));
-// Returns 'true'
+// Returns 'true', as 2^53-1 is the max safe number.
 
 dd(Math.pow(2, 53) - 1 === Number.MAX_SAFE_INTEGER);
-// Returns 'true'
+// Returns 'true', as 2^53-1 is the max safe number.
 
 dd(Number.isFinite(Math.pow(2, 53)));
-// Returns 'true'
+// Returns 'true', numbers above the MAX_SAFE_INTEGER are still considered finite numbers.
 
 dd(Number.isNaN(Math.pow(2, 53)));
-// Returns 'false'
+// Returns 'false', numbers above the MAX_SAFE_INTEGER are still considered numbers.
 
 // ************************************************************
 
