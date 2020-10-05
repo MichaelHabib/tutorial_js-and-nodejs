@@ -31,6 +31,35 @@ const dd = function (message, stack_item_index = 3, show_filepath = true) {
 * ************************************************************
  * */
 
+dd(['string', 3, ['another array']]);
+// Returns '[ 'string', 3, [ 'another array' ] ]'. Array items can be of any type.
+
+let my_array;
+
+my_array = ['a', 'b', 'c'];
+dd(my_array[0]);
+// Returns '"a"', Arrays are zero indexed.
+
+
+/*
+* ************************************************************
+* Array Transformation
+* */
+dd(['this', 'array', 'has been', 'joined'].join(' '));
+// Returns '"this array has been joined"' .
+
+dd(['join', 'with', 'dashes'].join('-'));
+// Returns '"join-with-dashes"'.
+
+my_array = ['a', 'b', 'c'];
+my_array.push('add one more !')
+dd(my_array);
+// Returns '[ 'a', 'b', 'c', 'add one more !' ]', after adding one more item to the end of the array.
+
+my_array = ['x', 'y', 'z-the-last'];
+dd(my_array.pop());
+// Returns '"z-the-last"', the last item in the array.
+
 
 /*
 * ************************************************************
