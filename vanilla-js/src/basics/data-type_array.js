@@ -58,8 +58,24 @@ dd(my_array);
 
 my_array = ['x', 'y', 'z-the-last'];
 dd(my_array.pop());
-// Returns '"z-the-last"', the last item in the array.
+// Returns '"z-the-last"', removing the last item in the array.
 
+
+my_array = ['a', 'b', 'c'];
+dd(my_array.shift());
+// Returns 'a', removing the first item from the array.
+
+
+my_array = ['a', 'b', 'c'];
+my_array.unshift('first-item');
+dd(my_array);
+// Returns '[ 'first-item', 'a', 'b', 'c' ]', adding an item to the start of the array.
+
+
+my_array = ['c', 'd', 'g'];
+my_array.splice(2, 0, ...['e', 'f']);
+dd(my_array);
+// Returns '[ 'first-item', 'a', 'b', 'c' ]', adding an item to the start of the array.
 
 /*
 * ************************************************************
