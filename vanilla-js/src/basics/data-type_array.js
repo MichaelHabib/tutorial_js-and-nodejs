@@ -72,10 +72,46 @@ dd(my_array);
 // Returns '[ 'first-item', 'a', 'b', 'c' ]', adding an item to the start of the array.
 
 
-my_array = ['c', 'd', 'g'];
-my_array.splice(2, 0, ...['e', 'f']);
+my_array = ['c', 'd', 'item to remove', 'g'];
+my_array.splice(2, 1, ...['e', 'f']);
 dd(my_array);
-// Returns '[ 'first-item', 'a', 'b', 'c' ]', adding an item to the start of the array.
+// Returns '[ 'c', 'd', 'e', 'f', 'g' ]', adding "e" and "f" after the second item AFTER removing 1 item .
+
+
+my_array = ['0', '1', 'a', 'b', 'c'];
+my_array.splice(0,2)
+dd(my_array);
+// Returns '[ 'a', 'b', 'c' ]' after removing 2 items starting at array index 0
+
+
+my_array = ['a', 'b', 'c'];
+my_array_2 = ['d'];
+my_array_merged = my_array.concat(my_array_2);
+dd(my_array_merged);
+// Returns '[ 'a', 'b', 'c', 'd' ]', a new array as a result of merging 2 or more arrays, leaving the original arrays untouched .
+
+
+my_array = ['0', '1', 'a', 'b', 'c'];
+my_array.slice(3,10)
+dd(my_array.slice(3,5));
+// Returns '[ 'b', 'c' ]', returning items between indexes 3-5 as a new array.
+
+
+
+
+/*
+* ************************************************************
+* Array Sorting
+* */
+
+my_array = ['x','y','a', 'b', 'c'];
+my_array.sort()
+dd(my_array);
+// Returns '[ 'a', 'b', 'c', 'x', 'y' ]'
+
+
+
+
 
 /*
 * ************************************************************

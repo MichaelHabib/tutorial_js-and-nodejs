@@ -4,6 +4,7 @@
 
 Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $file_name` to watch then re-execute the file on change.
 
+
 == Conclusions
 
 === Numbers
@@ -17,5 +18,22 @@ Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $f
 
 - Refactor the code
 ** Place output comment AFTER the console.log statements.
+
+== Code samples to write
+- Basics
+** link:src/basics/data-type_string.js[Strings]
+** Numbers
+** Arrays
+** Objects
+- HTML DOM
+** HTML / DOM Manipulation
+- Common Issues
+** Immutable States
+** Data type checks
+- ES6 Changes
+** Modules
+
+
+
 == Credits
 - https://webbjocke.com/javascript-check-data-types/
