@@ -10,7 +10,6 @@ Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $f
 === Numbers
 
 - Safe *integers* are (2^53 - 1) to -(2^53 - 1), this *excludes* decimal numbers.
--apest pritn
 -
 
 
@@ -22,9 +21,9 @@ Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $f
 == Code samples to write
 - Basics
 ** link:src/basics/data-type_string.js[Strings]
-** Numbers
-** Arrays
-** Objects
+** link:src/basics/data-type_number.js[Numbers]
+** link:src/basics/data-type_array.js[Arrays]
+** link:src/basics/data-type_object.js[Objects]
 - HTML DOM
 ** HTML / DOM Manipulation
 - Common Issues

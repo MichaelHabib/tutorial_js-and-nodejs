@@ -36,10 +36,59 @@ dd(['string', 3, ['another array']]);
 
 let my_array;
 
+
+/*
+* ************************************************************
+* Accessing Array Items
+* */
 my_array = ['a', 'b', 'c'];
 dd(my_array[0]);
 // Returns '"a"', Arrays are zero indexed.
 
+my_array = ['a', 'b', 'c', 'a', 'a', 'b', 'b'];
+dd(my_array.indexOf('c'));
+// Returns '2', the location of the first occurrence after searching for the specific item.
+
+my_array = ['a', 'b', 'c', 'a', 'a', 'b', 'b'];
+dd(my_array.lastIndexOf('a'));
+// Returns '4', the location of the last occurrence after searching for the specific item.
+
+
+my_array = ['a', 'b', 'c'];
+dd(my_array.find((item, index) => {
+    return item !== 'a';
+}));
+// Returns '"b"', the first item that returns true for the test.
+
+my_array = ['a', 'b', 'c'];
+dd(my_array.findIndex((item, index) => {
+    return item !== 'a';
+}));
+// Returns '1', the index of the first item that returns true for the test.
+
+
+my_array = ['a', 'b', 'c'];
+my_array.forEach((item, index) => {
+    console.log(`${item} is at index ${index}`)
+});
+// Returns the following as a result of looping through the items one at a time.
+// a is at index 0
+// b is at index 1
+// c is at index 2
+
+
+my_array = ['a', 'b', 'c', 'aaa', 'bbb'];
+my_array_2 = my_array.filter((item, index) => {
+    return item.indexOf('a') >= 0;
+});
+dd(my_array_2)
+// Returns '[ 'a', 'aaa' ]', retuning all items that pass the test as a new array.
+
+
+my_array = ['a', 'b', 'c'];
+dd(my_array.keys())
+
+dd_enabled = false;
 
 /*
 * ************************************************************
@@ -58,12 +107,12 @@ dd(my_array);
 
 my_array = ['x', 'y', 'z-the-last'];
 dd(my_array.pop());
-// Returns '"z-the-last"', removing the last item in the array.
+// Returns '"z-the-last"', removing then returning the last item from the array.
 
 
 my_array = ['a', 'b', 'c'];
 dd(my_array.shift());
-// Returns 'a', removing the first item from the array.
+// Returns 'a', removing then returning the first item from the array.
 
 
 my_array = ['a', 'b', 'c'];
@@ -79,7 +128,7 @@ dd(my_array);
 
 
 my_array = ['0', '1', 'a', 'b', 'c'];
-my_array.splice(0,2)
+my_array.splice(0, 2)
 dd(my_array);
 // Returns '[ 'a', 'b', 'c' ]' after removing 2 items starting at array index 0
 
@@ -92,11 +141,17 @@ dd(my_array_merged);
 
 
 my_array = ['0', '1', 'a', 'b', 'c'];
-my_array.slice(3,10)
-dd(my_array.slice(3,5));
+dd(my_array.slice(4));
+// Returns '[ 'c' ]', returning items between index 4 to end of array, as a new array.
+
+my_array = ['0', '1', 'a', 'b', 'c'];
+dd(my_array.slice(3, 5));
 // Returns '[ 'b', 'c' ]', returning items between indexes 3-5 as a new array.
 
 
+my_array = ['0', '1', 'a', 'b', 'c'];
+dd(my_array.slice(-1));
+// Returns '[ 'c' ]', returning items between index -1 to end of array, as a new array. Negative number are counted from the end of an array.
 
 
 /*
@@ -104,13 +159,10 @@ dd(my_array.slice(3,5));
 * Array Sorting
 * */
 
-my_array = ['x','y','a', 'b', 'c'];
+my_array = ['x', 'y', 'a', 'b', 'c'];
 my_array.sort()
 dd(my_array);
 // Returns '[ 'a', 'b', 'c', 'x', 'y' ]'
-
-
-
 
 
 /*
@@ -122,5 +174,7 @@ dd(typeof ['a', 'b']);
 // Returns 'object'
 
 
+dd(['a', 'b'].constructor.name);
+// Returns 'true'
 dd(Array.isArray(['a', 'b']));
 // Returns 'true'
