@@ -4,7 +4,6 @@
 
 Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $file_name` to watch then re-execute the file on change.
 
-
 == Conclusions
 
 === Numbers
@@ -12,18 +11,23 @@ Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $f
 - Safe *integers* are (2^53 - 1) to -(2^53 - 1), this *excludes* decimal numbers.
 -
 
-
 == ToDo
 
 - Refactor the code
 ** Place output comment AFTER the console.log statements.
 
 == Code samples to write
+
 - Basics
-** link:src/basics/data-type_string.js[Strings]
-** link:src/basics/data-type_number.js[Numbers]
-** link:src/basics/data-type_array.js[Arrays]
-** link:src/basics/data-type_object.js[Objects]
+** link:src/basics/variables.js[Variables]
+** link:src/basics/functions.js[Functions]
+** link:src/basics/loops.js[Loops]
+** link:src/basics/conditions.js[Conditions]
+** link:src/basics/data-type_string.js[Data Type - String]
+** link:src/basics/data-type_number.js[Data Type - Number]
+** link:src/basics/data-type_array.js[Data Type - Array]
+** link:src/basics/data-type_object.js[Data Type - Object]
+
 - HTML DOM
 ** HTML / DOM Manipulation
 - Common Issues
@@ -32,7 +36,6 @@ Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $f
 - ES6 Changes
 ** Modules
 
-
-
 == Credits
+
 - https://webbjocke.com/javascript-check-data-types/

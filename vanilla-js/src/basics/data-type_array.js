@@ -34,40 +34,50 @@ const dd = function (message, stack_item_index = 3, show_filepath = true) {
 dd(['string', 3, ['another array']]);
 // Returns '[ 'string', 3, [ 'another array' ] ]'. Array items can be of any type.
 
-let my_array;
+let my_array, my_array_2, my_array_3;
 
 
 /*
 * ************************************************************
 * Accessing Array Items
 * */
-my_array = ['a', 'b', 'c'];
+
+
+my_array = ['a', 'b', 'c', 'a', 'a', 'b', 'b', 'aaa', 'aaa', 'bbb'];
+
 dd(my_array[0]);
 // Returns '"a"', Arrays are zero indexed.
 
-my_array = ['a', 'b', 'c', 'a', 'a', 'b', 'b'];
+
 dd(my_array.indexOf('c'));
 // Returns '2', the location of the first occurrence after searching for the specific item.
 
-my_array = ['a', 'b', 'c', 'a', 'a', 'b', 'b'];
+dd(my_array.indexOf('something else'));
+// Returns '-1', as the item was not found.
+
 dd(my_array.lastIndexOf('a'));
 // Returns '4', the location of the last occurrence after searching for the specific item.
 
-
-my_array = ['a', 'b', 'c'];
 dd(my_array.find((item, index) => {
     return item !== 'a';
 }));
 // Returns '"b"', the first item that returns true for the test.
 
-my_array = ['a', 'b', 'c'];
 dd(my_array.findIndex((item, index) => {
     return item !== 'a';
 }));
 // Returns '1', the index of the first item that returns true for the test.
 
 
+my_array_2 = my_array.filter((item, index) => {
+    return item.indexOf('a') >= 0;
+});
+dd(my_array_2);
+// Returns '[ 'a', 'a', 'a', 'aaa', 'aaa' ]', retuning all items that pass the test as a new array.
+
+
 my_array = ['a', 'b', 'c'];
+
 my_array.forEach((item, index) => {
     console.log(`${item} is at index ${index}`)
 });
@@ -77,18 +87,12 @@ my_array.forEach((item, index) => {
 // c is at index 2
 
 
-my_array = ['a', 'b', 'c', 'aaa', 'bbb'];
-my_array_2 = my_array.filter((item, index) => {
-    return item.indexOf('a') >= 0;
+my_array_2 = my_array.map((item, index) => {
+    return item.concat(" >>");
 });
-dd(my_array_2)
-// Returns '[ 'a', 'aaa' ]', retuning all items that pass the test as a new array.
+dd(my_array_2);
+// Returns '[ 'a >>', 'b >>', 'c >>' ]', a new array where items are the result of the returned value.
 
-
-my_array = ['a', 'b', 'c'];
-dd(my_array.keys())
-
-dd_enabled = false;
 
 /*
 * ************************************************************
@@ -173,8 +177,31 @@ dd(my_array);
 dd(typeof ['a', 'b']);
 // Returns 'object'
 
-
 dd(['a', 'b'].constructor.name);
-// Returns 'true'
+// Returns 'Array'
+
 dd(Array.isArray(['a', 'b']));
 // Returns 'true'
+
+
+my_array = ['a', 'b', 'c', 'a', 'a', 'b', 'b', 'aaa', 'aaa', 'bbb'];
+
+my_array_2 = my_array.every((item, index) => {
+    return item.indexOf('z') === -1;
+});
+dd(my_array_2);
+// Returns 'true', after checking that every item doe not contain a "z".
+
+dd(my_array.includes('aaa'));
+// Retuning 'true', after checking that at least one item contains "a".
+
+
+my_array_2 = my_array.some((item, index) => {
+    // return (item === "a") && (item.length > 1);
+    return item.length > 1;
+});
+dd(my_array_2);
+// Returns 'true', after checking that every item doe not contain a "z".
+
+
+dd_enabled = false;
