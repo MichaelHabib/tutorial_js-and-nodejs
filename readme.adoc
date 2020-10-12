@@ -2,5 +2,5 @@
 This repo is an experiment to learn more about NodeJS, related libraries & automation tools.
 
 == Change Log
-- *Each folder should have a readme.adoc file explaining what it's purpose.*
+- *Each folder should have a readme.adoc file explaining its purpose.*
 

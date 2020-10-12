@@ -30,6 +30,7 @@ const dd = function (message, stack_item_index = 3, show_filepath = true) {
 * * Start of Vanilla JS Basics - Arrays Data Type Guide
 * ************************************************************
  * */
+console.log('************************************************************');
 
 dd(['string', 3, ['another array']]);
 // Returns '[ 'string', 3, [ 'another array' ] ]'. Array items can be of any type.
@@ -96,7 +97,7 @@ dd(my_array_2);
 
 /*
 * ************************************************************
-* Array Transformation
+* Modifying and Transforming Arrays
 * */
 dd(['this', 'array', 'has been', 'joined'].join(' '));
 // Returns '"this array has been joined"' .
@@ -168,7 +169,7 @@ dd(my_array.join(' + '));
 
 /*
 * ************************************************************
-* Array Sorting
+* Sorting Arrays
 * */
 
 my_array = ['x', 'y', 'a', 'b', 'c'];
@@ -179,7 +180,7 @@ dd(my_array);
 
 /*
 * ************************************************************
-* Checks & Validation
+* Checking Arrays and Array Items
 * */
 
 dd(typeof ['a', 'b']);

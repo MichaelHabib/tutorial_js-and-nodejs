@@ -80,7 +80,7 @@ dd(my_string.indexOf('non-existing'));
 // 17
 dd(my_string.lastIndexOf(' '));
 
-// prints '8', search done with regex.
+// ToDo: prints '8', search done with regex.
 dd(my_string.search(/my/g));
 
 // prints 'true', after checking if 'my' is at the start of the string after applying the optional start offset.
@@ -181,3 +181,6 @@ dd(my_string.split(' '));
 function isString(value) {
     return typeof value === 'string' || value instanceof String;
 }
+
+
+

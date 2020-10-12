@@ -1,5 +1,5 @@
 {
-  "name": "@michaelhabib/tutorial_js-and-nodejs_vanilla-js",
+  "name": "@michaelhabib/tutorial_js-and-nodejs_jquery",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jquery": "^3.5.1",
     "nodemon": "^2.0.4"
   }
 }
