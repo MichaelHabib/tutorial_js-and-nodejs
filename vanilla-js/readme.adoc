@@ -16,6 +16,8 @@ Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $f
 - Refactor the code
 ** Place output comment AFTER the console.log statements.
 
+
+
 == Code samples to write
 
 - Basics

@@ -158,6 +158,14 @@ dd(my_array.slice(-1));
 // Returns '[ 'c' ]', returning items between index -1 to end of array, as a new array. Negative number are counted from the end of an array.
 
 
+
+my_array = ['0', '1', 'a', 'b', 'c'];
+dd(my_array.join(' + '));
+// Returns '"0 + 1 + a + b + c"', a string with the result of joining all elements with the specified operator. Default operator is a comma, which is used when no operator is passed in.
+
+
+
+
 /*
 * ************************************************************
 * Array Sorting
@@ -193,15 +201,14 @@ dd(my_array_2);
 // Returns 'true', after checking that every item doe not contain a "z".
 
 dd(my_array.includes('aaa'));
-// Retuning 'true', after checking that at least one item contains "a".
+// Retuning 'true', after checking that at least one item returns true for the test.
 
 
 my_array_2 = my_array.some((item, index) => {
-    // return (item === "a") && (item.length > 1);
-    return item.length > 1;
+    return item === 'aaa' && item.length === 3 && item.startsWith('a');
 });
 dd(my_array_2);
-// Returns 'true', after checking that every item doe not contain a "z".
+// Returns 'true', after checking that at least one item returns true for the test.
 
 
 dd_enabled = false;

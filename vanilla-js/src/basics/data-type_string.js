@@ -175,7 +175,7 @@ dd(my_string.split(' '));
 
 /*
 * ************************************************************
-* Validation
+* Checks & Validation
 * */
 
 function isString(value) {
