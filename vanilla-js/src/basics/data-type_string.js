@@ -87,9 +87,6 @@ dd(my_string.search(/is/g));
 dd(my_string.match(/is/g));
 // Returns '[ 'is', 'is' ]', an array with the result of the RegExp, returns NULL if nothing is found.
 
-
-dd_enabled = false;
-
 dd(my_string.startsWith('my', 8));
 // Returns 'true', after checking if 'my' is at the start of the string after applying the optional start offset.
 
