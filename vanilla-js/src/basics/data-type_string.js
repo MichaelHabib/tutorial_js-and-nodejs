@@ -45,58 +45,65 @@ let my_string_object = new String("This is my second string !!");
 * ************************************************************
 *
 * */
-// prints "string"
 dd(typeof my_string);
+// Returns "string"
 
-// prints "19"
 dd(my_string.length);
+// Returns "19"
 
-// prints "String"
 dd(my_string_object.constructor.name);
+// Returns "String"
 
 
-// prints "[String: 'This is my second string !!']"
 dd(my_string_object);
+// Returns "[String: 'This is my second string !!']"
 
-// prints "This is my second string !!"
 dd(my_string_object.valueOf());
+// Returns "This is my second string !!"
 
-// prints "String"
 dd(my_string_object.constructor.name);
+// Returns "String"
 
 /*
 * ************************************************************
 * Finding a string
 * */
-// prints "8"
+
 dd(my_string.indexOf('my'));
+// Returns '8', the position of the first occurrence of the string.
 
-// prints "5", as the search started from the 4th character.
 dd(my_string.indexOf('is', 4));
+// Returns '5', the position of the first occurrence of the string, after the specified starting index.
 
-// prints "-1" when string is not found.
 dd(my_string.indexOf('non-existing'));
+// Returns "-1" when string is not found.
 
-// 17
 dd(my_string.lastIndexOf(' '));
+// Returns 17, the position of the last occurrence of the string.
 
-// ToDo: prints '8', search done with regex.
-dd(my_string.search(/my/g));
+dd(my_string.search(/is/g));
+// Returns '2', the position of the first occurrence of the string.
 
-// prints 'true', after checking if 'my' is at the start of the string after applying the optional start offset.
+dd(my_string.match(/is/g));
+// Returns '[ 'is', 'is' ]', an array with the result of the RegExp, returns NULL if nothing is found.
+
+
+dd_enabled = false;
+
 dd(my_string.startsWith('my', 8));
+// Returns 'true', after checking if 'my' is at the start of the string after applying the optional start offset.
 
-// prints 'true', after checking if 'is' is at the end of the string after applying the optional end offset.
 dd(my_string.endsWith('is', 7));
+// Returns 'true', after checking if 'is' is at the end of the string after applying the optional end offset.
 
-// prints 'true'
 dd(my_string.includes('my'));
+// Returns 'true'
 
-// prints '[ 'is', 'is', 'in' ]'
 dd(my_string.match(/i[a-zA-Z]/ig));
+// Returns '[ 'is', 'is', 'in' ]'
 
-// prints the string repeated x times.
 dd(my_string.repeat(2));
+// Returns the string repeated x times.
 
 /*
 * ************************************************************
@@ -104,17 +111,17 @@ dd(my_string.repeat(2));
 * */
 
 
-// prints 'This is', extracting characters 0-7 to a new variable.
 dd(my_string.slice(0, 7));
+// Returns 'This is', extracting characters 0-7 to a new variable.
 
-// prints 'string !', extracting characters 11 onwards to a new variable.
 dd(my_string.slice(11));
+// Returns 'string !', extracting characters 11 onwards to a new variable.
 
-// prints 'ng !', extracting 4 characters from the end of the string to a new variable.
 dd(my_string.slice(-4));
+// Returns 'ng !', extracting 4 characters from the end of the string to a new variable.
 
-// prints 's', extracting the 3rd characters from the end of the string to a new variable.
 dd(my_string.charAt(3));
+// Returns 's', extracting the 3rd characters from the end of the string to a new variable.
 
 
 /*
@@ -122,36 +129,37 @@ dd(my_string.charAt(3));
 * Use slice() for a more consistent outcome.
 * */
 
-// prints 'This is', extracting characters 0-7 to a new variable.
 dd(my_string.substring(0, 7));
+// Returns 'This is', extracting characters 0-7 to a new variable.
 
-// prints 'string !', extracting characters 11 onwards to a new variable.
 dd(my_string.substring(11));
+// Returns 'string !', extracting characters 11 onwards to a new variable.
 
-// prints 'This is my string!', converting the negative "-4" to 0 then printing 0-string.length to a new variable.
 dd(my_string.substring(-4));
+// Returns 'This is my string!', converting the negative "-4" to 0 then printing 0-string.length to a new variable.
 
 
-// prints 'This is', extracting 7 characters counting from 0 to a new variable.
 dd(my_string.substr(0, 7));
+// Returns 'This is', extracting 7 characters counting from 0 to a new variable.
 
-// prints 'string !', extracting characters 11 onwards to a new variable.
 dd(my_string.substr(11));
+// Returns 'string !', extracting characters 11 onwards to a new variable.
 
-// prints 'ng !', extracting 4 characters from the end of the string to a new variable.
 dd(my_string.substr(-4));
+// Returns 'ng !', extracting 4 characters from the end of the string to a new variable.
 
-// prints 's is my', extracting 7 characters counting from 3 to a new variable.
 dd(my_string.substr(3, 7));
+// Returns 's is my', extracting 7 characters counting from 3 to a new variable.
 
-// prints 'This is my string ??', replacing the first occurrence of '!' with '??'
 dd(my_string.replace('!', '??'));
+// Returns 'This is my string ??', replacing the first occurrence of '!' with '??'
 
-// prints 'This is my string !', the search value is case sensitive , so nothing was replaced!
 dd(my_string.replace('IS', 'was'));
+// Returns 'This is my string !', the search value is case sensitive , so nothing was replaced!
 
-// prints 'Thhuh huh my string !', replacing ALL occurrences of 'IS' with 'huh' using a regex. /i flag switched case-insensitive search while the /g flag switched on replace-all functionality .
 dd(my_string.replace(/IS/ig, 'huh'));
+// Returns 'Thhuh huh my string !', replacing ALL occurrences of 'IS' with 'huh' using a regex.
+// /i flag switched case-insensitive search while the /g flag switched on replace-all functionality .
 
 
 /*
@@ -159,11 +167,11 @@ dd(my_string.replace(/IS/ig, 'huh'));
 * Converting a string to array
 * */
 
-// prints an array of single characters.
 dd(my_string.split(''));
+// Returns an array of single characters.
 
-// prints an array of words that were separated by a space.
 dd(my_string.split(' '));
+// Returns an array of words that were separated by a space.
 
 
 /*
