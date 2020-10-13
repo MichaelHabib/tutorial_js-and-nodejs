@@ -29,7 +29,7 @@ const dd = function (message, stack_item_index = 3, show_filepath = true) {
 /*
 * Function Definition & Arguments
 * */
-function my_func_1(param1, param2) {
+function my_func_1(arg1, arg2) {
     return arguments;
 
 }
@@ -38,7 +38,7 @@ dd(my_func_1());
 // Returns the 'arguments' objects containing all arguments.
 
 
-let my_func_2 = function (param1, param2) {
+let my_func_2 = function (arg1, arg2) {
     return arguments;
 
 }
@@ -46,9 +46,10 @@ dd(my_func_2());
 // Returns the 'arguments' objects containing all arguments.
 
 
-let my_func_3 = (arg1, arg2, ...rest) => {
-    return rest;
+let my_func_3 = (arg1, arg2) => {
+    return arguments;
 
 }
 dd(my_func_3());
-// Returns an array of all arguments ??
+// SHOULD Return undefined.
+// ToDo: Why does this return an Argument object when executed in nodejs / terminal?
