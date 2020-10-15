@@ -34,22 +34,24 @@ function my_func_1(arg1, arg2) {
 
 }
 
-dd(my_func_1());
-// Returns the 'arguments' objects containing all arguments.
+dd(my_func_1('param1','param2','param3!!'));
+// Returns '[Arguments] { '0': 'param1', '1': 'param2', '2': 'param3!!' }'
+// Which is the value of the 'arguments' object containing all passes parameters.
 
 
 let my_func_2 = function (arg1, arg2) {
     return arguments;
 
 }
-dd(my_func_2());
-// Returns the 'arguments' objects containing all arguments.
+dd(my_func_2('param1','param2','param3!!'));
+// Returns '[Arguments] { '0': 'param1', '1': 'param2', '2': 'param3!!' }'
+// Which is the value of the 'arguments' object containing all passes parameters.
 
 
 let my_func_3 = (arg1, arg2) => {
     return arguments;
 
 }
-dd(my_func_3());
+// dd(my_func_3());
 // SHOULD Return undefined.
 // ToDo: Why does this return an Argument object when executed in nodejs / terminal?
