@@ -26,6 +26,13 @@ const dd = function (message, stack_item_index = 3, show_filepath = true) {
 
 }
 
+
+/*
+* ************************************************************
+* * Start of Vanilla JS Basics - Functions Tutorial
+* ************************************************************
+ * */
+
 /*
 * Function Definition & Arguments
 * */

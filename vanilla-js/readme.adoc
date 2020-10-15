@@ -15,7 +15,7 @@ Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $f
 
 - Refactor the code
 ** Place output comment AFTER the console.log statements.
-
+** Replace 'Guide' with 'Tutorial' in each js file header.
 
 
 == Code samples to write
@@ -28,8 +28,12 @@ Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $f
 ** link:src/basics/conditions.js[Conditions]
 ** link:src/basics/data-type_string.js[Data Type - String]
 ** link:src/basics/data-type_number.js[Data Type - Number]
+** link:src/basics/data-type_bigint.js[Data Type - BigInt]
 ** link:src/basics/data-type_array.js[Data Type - Array]
 ** link:src/basics/data-type_object.js[Data Type - Object]
+** link:src/basics/data-type_null.js[Data Type - Null]
+** link:src/basics/data-type_undefined.js[Data Type - Undefined]
+** link:src/basics/regexp.js[Regex]
 
 - HTML DOM
 ** HTML / DOM Manipulation
