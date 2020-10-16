@@ -99,7 +99,8 @@ function scope_of_let() {
     // Returns the initial value, unchanged by the variable declaration inside the if block.
 
     dd(func_let_2)
-    // Returns 'func let 1 initial value'. 'let' declaration inside the 'if' block assigns the variable to the surrounding scope and NOT the block scope. This makes 'func_let_2' accessible outside the 'if' block.
+    // Returns 'func let 2 NEW value', is the value was changes inside the if block due to the fact that variables are accessible in child scopes.
 
 };
 scope_of_let();
+

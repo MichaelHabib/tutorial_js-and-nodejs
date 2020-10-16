@@ -65,19 +65,40 @@ let my_func_3 = (arg1, arg2) => {
 
 
 /* ************************************************************
-* Function Instances & Scope
+* Function Instances & Scope with Constructor Functions Pattern
 * */
-function my_func_template1(arg1) {
-    this.args = arguments;
+function My_func_template1(arg1) {
+    this.arg1 = arg1;
 
     return this;
+    // 'this' refers to an instance of this function/object when created with the 'new' keyword.
 
 }
 
-dd(my_func_template1('param1') === global);
+My_func_template1.property_1 = 'prop 1 value';
+// This will NOT work, a property can not be assigned directly to a function. Object.prototype must be used.
 
-let my_func_instance1 = my_func_template1();
-let my_func_instance2 = my_func_template1();
-let my_func_instance3 = my_func_instance2;
-// let my_func_instance4 = new my_func_instance1
-// dd(my_func_instance1 === my_func_instance2);
+My_func_template1.prototype.set_property_2 = function (value) {
+    this.property_2 = value;
+};
+// Adding properties to the object using 'prototype'
+
+let my_func_template1_instance1 = new My_func_template1('param1');
+// Creating a new instance using the function constructor.
+
+my_func_template1_instance1.set_property_2('prop 2 value');
+
+dd(my_func_template1_instance1)
+
+// Returns 'My_func_template1 { arg1: 'param1', property_2: 'prop 2 value' }'
+
+
+function my_func_template2(arg1) {
+    this.arg1 = arg1;
+
+    return this;
+    // 'this' refers to an instance of this function/object when created with the 'new' keyword.
+
+}
+
+let fun = function (){};
