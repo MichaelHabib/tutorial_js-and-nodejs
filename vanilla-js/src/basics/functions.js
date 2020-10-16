@@ -93,12 +93,3 @@ dd(my_func_template1_instance1)
 // Returns 'My_func_template1 { arg1: 'param1', property_2: 'prop 2 value' }'
 
 
-function my_func_template2(arg1) {
-    this.arg1 = arg1;
-
-    return this;
-    // 'this' refers to an instance of this function/object when created with the 'new' keyword.
-
-}
-
-let fun = function (){};
