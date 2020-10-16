@@ -83,11 +83,10 @@ function scope_of_let() {
        try{
            dd(func_let_1)
        }catch (e){
-           dd('failed to access func_let_1 before initialization .. thanks hoisting !')
+           dd('failed to access func_let_1 before initialization ... no hoisting!')
        }
-        // returns the initial value. 'func_let_1' is accessible here.
 
-        let func_let_1 = 'func let 1 NEW value';
+        let func_let_1 = 'func let 1 initial value for the new variable!';
         dd(func_let_1)
         // returns the new value. Re-declaring 'func_let_1' here with the 'let' keyword created a new variable within the surrounding block scope, leaving the function scope untouched.
 
