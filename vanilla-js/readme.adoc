@@ -34,6 +34,7 @@ Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $f
 ** link:src/basics/data-type_null.js[Data Type - Null]
 ** link:src/basics/data-type_undefined.js[Data Type - Undefined]
 ** link:src/basics/regexp.js[Regex]
+** link:src/basics/best-practices.js[Best Practices]
 
 - HTML DOM
 ** HTML / DOM Manipulation
