@@ -26,6 +26,7 @@ Simply run each file with nodejs directly or use `npm run nodemon_watch -- -w $f
 ** link:src/basics/classes.js[Classes]
 ** link:src/basics/loops.js[Loops]
 ** link:src/basics/conditions.js[Conditions]
+** link:src/basics/promises.js[Promises]
 ** link:src/basics/data-type_string.js[Data Type - String]
 ** link:src/basics/data-type_number.js[Data Type - Number]
 ** link:src/basics/data-type_bigint.js[Data Type - BigInt]

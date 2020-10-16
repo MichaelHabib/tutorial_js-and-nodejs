@@ -92,4 +92,3 @@ dd(my_func_template1_instance1)
 
 // Returns 'My_func_template1 { arg1: 'param1', property_2: 'prop 2 value' }'
 
-

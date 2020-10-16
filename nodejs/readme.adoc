@@ -1,5 +1,8 @@
 = NodeJS Guide
 
+== ToDo
+- Add all recommended packages
+- Setup NVM
 
 == Recommended Packages
 
