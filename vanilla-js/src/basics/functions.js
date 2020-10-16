@@ -33,7 +33,7 @@ const dd = function (message, stack_item_index = 3, show_filepath = true) {
 * ************************************************************
  * */
 
-/*
+/* ************************************************************
 * Function Definition & Arguments
 * */
 function my_func_1(arg1, arg2) {
@@ -41,7 +41,7 @@ function my_func_1(arg1, arg2) {
 
 }
 
-dd(my_func_1('param1','param2','param3!!'));
+dd(my_func_1('param1', 'param2', 'param3!!'));
 // Returns '[Arguments] { '0': 'param1', '1': 'param2', '2': 'param3!!' }'
 // Which is the value of the 'arguments' object containing all passes parameters.
 
@@ -50,7 +50,7 @@ let my_func_2 = function (arg1, arg2) {
     return arguments;
 
 }
-dd(my_func_2('param1','param2','param3!!'));
+dd(my_func_2('param1', 'param2', 'param3!!'));
 // Returns '[Arguments] { '0': 'param1', '1': 'param2', '2': 'param3!!' }'
 // Which is the value of the 'arguments' object containing all passes parameters.
 
@@ -62,3 +62,22 @@ let my_func_3 = (arg1, arg2) => {
 // dd(my_func_3());
 // SHOULD Return undefined.
 // ToDo: Why does this return an Argument object when executed in nodejs / terminal?
+
+
+/* ************************************************************
+* Function Instances & Scope
+* */
+function my_func_template1(arg1) {
+    this.args = arguments;
+
+    return this;
+
+}
+
+dd(my_func_template1('param1') === global);
+
+let my_func_instance1 = my_func_template1();
+let my_func_instance2 = my_func_template1();
+let my_func_instance3 = my_func_instance2;
+// let my_func_instance4 = new my_func_instance1
+// dd(my_func_instance1 === my_func_instance2);
